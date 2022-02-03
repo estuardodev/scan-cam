@@ -35,6 +35,7 @@ dependencies {
 
     // Plugin Necesario para Scaner
     implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

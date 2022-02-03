@@ -4,16 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#0D1117">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navegador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#010101"
+        android:background="#161B22"
         app:itemIconTint="#FFF"
         app:itemTextColor="#FFF"
         app:menu="@menu/navigation">
+
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/ic_baseline_arrow_circle_up_24"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="SELECIONA UNA OPCIÓN"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#A7A7A7"/>
+
+    <FrameLayout
+        android:id="@+id/fragments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="56dp" />
 </RelativeLayout>
