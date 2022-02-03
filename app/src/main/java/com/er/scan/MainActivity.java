@@ -14,6 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bnv;
     Codigoqr codigoqr = new Codigoqr();
+    CodigoBarras codigoBarras = new CodigoBarras();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.qr:
                     loadFragment(codigoqr);
                     return true;
-                case R.id.otros:
-                    Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_LONG).show();
+                case R.id.barras:
+                    loadFragment(codigoBarras);
+                    return true;
 
             }
             return  false;

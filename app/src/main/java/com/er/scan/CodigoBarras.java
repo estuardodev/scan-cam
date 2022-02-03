@@ -1,8 +1,5 @@
 package com.er.scan;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -18,16 +15,13 @@ import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-import com.journeyapps.barcodescanner.CaptureActivity;
 
-
-public class Codigoqr extends Fragment {
-
+public class CodigoBarras extends Fragment {
     TextView link;
     Button btnLeer;
 
 
-    public Codigoqr() {
+    public CodigoBarras() {
         // Required empty public constructor
     }
 
@@ -35,10 +29,10 @@ public class Codigoqr extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View vista = inflater.inflate(R.layout.fragment_codigoqr, container, false);
+        View vista = inflater.inflate(R.layout.fragment_codigo_barras, container, false);
 
-        link = vista.findViewById(R.id.link);
-        btnLeer = vista.findViewById(R.id.btnScanQR);
+        link = vista.findViewById(R.id.link2);
+        btnLeer = vista.findViewById(R.id.btnScanBarras);
 
 
         btnLeer.setOnClickListener(new View.OnClickListener() {
@@ -49,20 +43,15 @@ public class Codigoqr extends Fragment {
         });
 
         return vista;
-
-
     }
 
-
-
     public void escanear(){
-        IntentIntegrator intent = IntentIntegrator.forSupportFragment(Codigoqr.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-        intent.setPrompt("ESCANEAR CÓDIGO QR");
+        IntentIntegrator intent = IntentIntegrator.forSupportFragment(CodigoBarras.this);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.PRODUCT_CODE_TYPES);
+        intent.setPrompt("ESCANEAR CÓDIGO DE BARRAS");
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
         intent.setOrientationLocked(false);
-        intent.setCaptureActivity(CaptureActivityPortrait.class);
         intent.setBarcodeImageEnabled(false);
         intent.initiateScan();
     }
@@ -79,7 +68,7 @@ public class Codigoqr extends Fragment {
                 link.setText(result.getContents().toString());
             }
         }else{
-         super.onActivityResult(requestCode, resultCode, data);
+            super.onActivityResult(requestCode, resultCode, data);
         }
     }
 

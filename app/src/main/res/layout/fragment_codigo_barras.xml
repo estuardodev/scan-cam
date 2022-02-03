@@ -2,32 +2,31 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#2A0909"
     android:layout_height="match_parent"
-    android:background="#050015"
-    tools:context=".Codigoqr">
 
+    tools:context=".CodigoBarras">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/link"
+            android:id="@+id/link2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:autoLink="web"
-            android:text="No se ha escaneado ningún enlace"
+            android:autoLink="none"
+            android:text="No se ha escaneado ningún código"
             android:textColor="#fff"
             android:textStyle="bold"
             android:layout_marginTop="400dp"/>
 
         <Button
-            android:id="@+id/btnScanQR"
+            android:id="@+id/btnScanBarras"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Escanear"
             android:layout_centerInParent="true"/>
 
     </RelativeLayout>
-
 </FrameLayout>
