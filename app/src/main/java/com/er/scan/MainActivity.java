@@ -12,6 +12,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,14 +25,31 @@ public class MainActivity extends AppCompatActivity {
     Codigoqr codigoqr = new Codigoqr();
     CodigoBarras codigoBarras = new CodigoBarras();
     CodigoOtros codigoOtros = new CodigoOtros();
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //ANUNCIOS
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
         bnv = findViewById(R.id.navegador);
         bnv.setOnNavigationItemSelectedListener(mOnNavigationItemSelectdListener);
     }
+
 
     private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectdListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -84,5 +107,22 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
