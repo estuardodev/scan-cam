@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bnv;
     Codigoqr codigoqr = new Codigoqr();
     CodigoBarras codigoBarras = new CodigoBarras();
+    CodigoOtros codigoOtros = new CodigoOtros();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.barras:
                     loadFragment(codigoBarras);
+                    return true;
+                case R.id.otros:
+                    loadFragment(codigoOtros);
                     return true;
 
             }
