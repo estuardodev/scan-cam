@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/qr"
+        android:icon="@drawable/ic_qr"
+        android:title="Códigos QR"
+        />
+    <item
+        android:id="@+id/barras"
+        android:icon="@drawable/ic_barras"
+        android:title="Códigos de Barras"/>
+    <item
+        android:id="@+id/otros"
+        android:icon="@drawable/ic_otros"
+        android:title="Otros Códigos"/>
+
+
+</menu>
