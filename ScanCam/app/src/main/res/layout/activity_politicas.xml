@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         ads:adSize="FULL_BANNER"
         android:visibility="visible"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-6691938542138083/2025304636"></com.google.android.gms.ads.AdView>
 
     <WebView
         android:id="@+id/web2"
