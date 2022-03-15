@@ -1,5 +1,8 @@
 package com.er.scan;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -66,6 +69,11 @@ public class CodigoBarras extends Fragment {
                 Toast.makeText(getContext(), "Cancelaste el escaneo", Toast.LENGTH_LONG).show();
             }else{
                 link.setText(result.getContents().toString());
+                Toast.makeText(getContext(), "Texto copiado al portapapeles", Toast.LENGTH_LONG).show();
+                ClipboardManager clipboard = (ClipboardManager)
+                        getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("simple text", link.getText());
+                clipboard.setPrimaryClip(clip);
             }
         }else{
             super.onActivityResult(requestCode, resultCode, data);

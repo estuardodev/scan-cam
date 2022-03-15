@@ -48,6 +48,11 @@ public class Codigoqr extends Fragment {
             }
         });
 
+
+
+
+
+
         return vista;
 
 
@@ -77,9 +82,17 @@ public class Codigoqr extends Fragment {
                 Toast.makeText(getContext(), "Cancelaste el escaneo", Toast.LENGTH_LONG).show();
             }else{
                 link.setText(result.getContents().toString());
+                Toast.makeText(getContext(), "Texto copiado al portapapeles", Toast.LENGTH_LONG).show();
+                ClipboardManager clipboard = (ClipboardManager)
+                        getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("simple text", link.getText());
+                clipboard.setPrimaryClip(clip);
             }
         }else{
          super.onActivityResult(requestCode, resultCode, data);
+
+
+
         }
     }
 
