@@ -19,12 +19,21 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.tasks.OnCompleteListener;
+import com.google.android.play.core.tasks.OnSuccessListener;
+import com.google.android.play.core.tasks.Task;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bnv;
     Codigoqr codigoqr = new Codigoqr();
     CodigoBarras codigoBarras = new CodigoBarras();
     CodigoOtros codigoOtros = new CodigoOtros();
+
+    ReviewManager manager;
+    ReviewInfo reviewInfo;
     private AdView mAdView;
 
     @Override
@@ -48,6 +57,32 @@ public class MainActivity extends AppCompatActivity {
 
         bnv = findViewById(R.id.navegador);
         bnv.setOnNavigationItemSelectedListener(mOnNavigationItemSelectdListener);
+
+        manager = ReviewManagerFactory.create(MainActivity.this);
+        Task<ReviewInfo> requast = manager.requestReviewFlow();
+        requast.addOnCompleteListener(new OnCompleteListener<ReviewInfo>() {
+            @Override
+            public void onComplete(@NonNull Task<ReviewInfo> task) {
+                if (task.isSuccessful()){
+                    reviewInfo = task.getResult();
+                    Task<Void> flow = manager.launchReviewFlow(MainActivity.this,reviewInfo);
+
+                    flow.addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+
+                        }
+                    });
+                }else
+                {
+
+                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+
+
+                }
+            }
+        });
+
     }
 
 
