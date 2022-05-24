@@ -42,7 +42,7 @@ public class Terminos extends AppCompatActivity {
         miweb = findViewById(R.id.web1);
         miweb.getSettings().setJavaScriptEnabled(true);
         miweb.setWebViewClient(new WebViewClient());
-        miweb.loadUrl("https://estuardodev.web.app/terminos-y-condiciones.html");
+        miweb.loadUrl("https://stuarddevapps.web.app/terminos-y-condiciones.html");
 
     }
 
