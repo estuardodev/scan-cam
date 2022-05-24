@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     ReviewManager manager;
     ReviewInfo reviewInfo;
     private AdView mAdView;
+    private AdView mAdView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        mAdView1 = findViewById(R.id.adView1);
+        AdRequest adRequest1 = new AdRequest.Builder().build();
+        mAdView1.loadAd(adRequest1);
 
 
         bnv = findViewById(R.id.navegador);
