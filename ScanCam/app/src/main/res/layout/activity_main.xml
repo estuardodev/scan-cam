@@ -18,6 +18,16 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_centerHorizontal="true"
+        ads:adSize="FULL_BANNER"
+        android:visibility="visible"
+        ads:adUnitId="ca-app-pub-6691938542138083/8639111536"></com.google.android.gms.ads.AdView>
+
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -51,6 +61,6 @@
         android:layout_centerHorizontal="true"
         ads:adSize="FULL_BANNER"
         android:visibility="visible"
-        ads:adUnitId="ca-app-pub-6691938542138083/5867195344"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-6691938542138083/9050175071"></com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

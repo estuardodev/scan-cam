@@ -18,20 +18,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class CodigoOtros extends Fragment {
     TextView link;
     Button btnLeer;
-    private InterstitialAd mInterstitialAd;
+
 
 
     public CodigoOtros() {
@@ -46,41 +39,12 @@ public class CodigoOtros extends Fragment {
         btnLeer = vista.findViewById(R.id.btnScanOtros);
 
 
-        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(getContext(),"ca-app-pub-3940256099942544/1033173712", adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-                        Log.i("Cargando", "onAdLoaded");
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        Log.i("Fallo", loadAdError.getMessage());
-                        mInterstitialAd = null;
-                    }
-                });
 
         btnLeer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 escanear();
-                AdRequest adRequest = new AdRequest.Builder().build();
-                if (mInterstitialAd != null) {
-                    mInterstitialAd.show(getActivity());
-                } else {
-                    Log.d("TAG", "The interstitial ad wasn't ready yet.");
-                }
+
             }
         });
 
@@ -89,10 +53,6 @@ public class CodigoOtros extends Fragment {
 
     }
 
-    private void anuncio(){
-
-
-    }
 
     public void escanear(){
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(CodigoOtros.this);

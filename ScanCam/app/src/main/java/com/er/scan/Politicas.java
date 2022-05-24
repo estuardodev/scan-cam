@@ -21,7 +21,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 public class Politicas extends AppCompatActivity {
     private WebView miweb;
 
-  //  private AdView mAdView;
+   private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +33,7 @@ public class Politicas extends AppCompatActivity {
         miweb.loadUrl("https://estuardodev.web.app/politicas-de-privacidad.html");
 
         //ANUNCIOS
-/*
+
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -43,7 +43,7 @@ public class Politicas extends AppCompatActivity {
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-*/
+
     }
 
 

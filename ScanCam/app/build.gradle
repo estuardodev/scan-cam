@@ -6,11 +6,11 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.er.scan"
+        applicationId "com.stuarddevapps.scancam"
         minSdk 19
         targetSdk 31
-        versionCode 9
-        versionName "3.3"
+        versionCode 5
+        versionName "4.1"
 
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
