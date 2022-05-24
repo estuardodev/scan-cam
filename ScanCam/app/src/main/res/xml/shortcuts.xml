@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:shortcutId="ShutQR"
+        android:enabled="true"
+        android:icon="@mipmap/short_qr"
+        android:shortcutLongLabel="@string/cam"
+        android:shortcutShortLabel="@string/cam">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.stuarddevapps.scancam"
+            android:targetClass="com.stuarddevapps.scancam.MainActivity"/>
+
+    </shortcut>
+
+
+</shortcuts>
