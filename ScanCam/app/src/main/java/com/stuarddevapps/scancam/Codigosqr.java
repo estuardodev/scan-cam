@@ -86,13 +86,12 @@ public class Codigosqr extends Fragment {
                 String envio = result.getContents().toString();
                 Intent ie = new Intent(getContext(), Escaneo.class);
                 ie.putExtra("Info",envio);
-                startActivity(ie);
-                link4.setText(result.getContents().toString());
                 Toast.makeText(getContext(), getString(R.string.CopyScan), Toast.LENGTH_LONG).show();
                 ClipboardManager clipboard = (ClipboardManager)
                         getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("simple text", link.getText());
                 clipboard.setPrimaryClip(clip);
+                startActivity(ie);
             }
         }else{
             super.onActivityResult(requestCode, resultCode, data);
