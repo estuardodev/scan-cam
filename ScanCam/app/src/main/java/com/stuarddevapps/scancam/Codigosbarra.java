@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -16,12 +17,21 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class Codigosbarra extends Fragment {
     //Variables
     Button btnLeer;
+    private InterstitialAd mInterstitialAd;
 
     public Codigosbarra() {
         // Required empty public constructor
@@ -41,11 +51,36 @@ public class Codigosbarra extends Fragment {
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_codigosbarra, container, false);
 
-        btnLeer = vista.findViewById(R.id.btnScanBarras);
+        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
 
+        btnLeer = vista.findViewById(R.id.btnScanBarras);
         btnScan();
+        setAds();
 
         return vista;
+    }
+
+    private void setAds(){
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(getContext(),getString(R.string.intersictial_bar), adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        mInterstitialAd = null;
+                    }
+                });
     }
 
     private void btnScan(){
@@ -81,6 +116,18 @@ public class Codigosbarra extends Fragment {
                 Intent ie = new Intent(getContext(), Escaneo.class);
                 ie.putExtra("Info",envio);
                 startActivity(ie);
+                if(mInterstitialAd!=null){
+                    mInterstitialAd.show(getActivity());
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            super.onAdDismissedFullScreenContent();
+                            mInterstitialAd = null;
+                        }
+
+                    });
+
+                }
             }
         }else{
             super.onActivityResult(requestCode, resultCode, data);

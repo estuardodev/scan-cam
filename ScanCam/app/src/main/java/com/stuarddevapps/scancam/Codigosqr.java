@@ -69,7 +69,7 @@ public class Codigosqr extends Fragment {
     private void setAds(){
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(getContext(),getString(R.string.intersictial), adRequest,
+        InterstitialAd.load(getContext(),getString(R.string.intersictial_qr), adRequest,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
