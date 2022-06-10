@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Escaneo"
-    android:background="@color/other_2">
+    android:background="@color/other_2"
+    android:id="@+id/mys">
 
 
     <TextView
@@ -28,6 +29,7 @@
         android:autoLink="web"
         android:text="@string/NoScan_1"
         android:textColor="@color/normal_1"
+        android:textSize="18dp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="95dp"
         tools:layout_editor_absoluteY="349dp" />
@@ -38,9 +40,10 @@
         android:layout_height="wrap_content"
         android:autoLink="web"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="250dp"
         android:text="@string/NNN"
         android:textColor="@color/normal_1"
+        android:textSize="20dp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="95dp"
         tools:layout_editor_absoluteY="349dp" />
@@ -57,9 +60,19 @@
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:visibility="invisible"
         android:layout_marginTop="152dp"
         android:layout_centerHorizontal="true"
         app:srcCompat="@drawable/ic_negative" />
-
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"
+        app:adSize="FULL_BANNER"
+        app:adUnitId="ca-app-pub-6691938542138083/9050175071"
+        tools:ignore="MissingConstraints"></com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

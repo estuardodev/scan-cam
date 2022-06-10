@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +21,8 @@ import java.net.URL;
 public class Escaneo extends AppCompatActivity {
     TextView enlace, secure;
     Button btn;
+    ImageView img;
+    RelativeLayout rl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,8 @@ public class Escaneo extends AppCompatActivity {
         enlace = findViewById(R.id.link4);
         secure = findViewById(R.id.txtSecure);
         btn = findViewById(R.id.btncopy);
-
+        img = findViewById(R.id.imageView);
+        rl = findViewById(R.id.mys);
 
         copy();
         try {
@@ -48,8 +54,15 @@ public class Escaneo extends AppCompatActivity {
     private void verify(URL url){
         if ("https".equals(url.getProtocol())) {
             secure.setText(getString(R.string.secure));
+            img.setVisibility(View.VISIBLE);
+            img.setImageResource(R.drawable.ic_verify);
+            rl.setBackgroundResource(R.color.green_1);
+
         } else if ("http".equals(url.getProtocol())) {
             secure.setText(getString(R.string.nosecure));
+            img.setVisibility(View.VISIBLE);
+            img.setImageResource(R.drawable.ic_negative);
+            rl.setBackgroundResource(R.color.other_6);
         }
     }
 
