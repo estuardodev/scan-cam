@@ -12,7 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Códigos QR"
-            android:textColor="#FFF"
+            android:textColor="@color/normal_1"
             android:layout_centerHorizontal="true"
             android:textSize="35dp"
             android:layout_marginTop="90dp"
@@ -24,8 +24,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:autoLink="web"
-            android:text="No se ha escaneado ningún enlace"
-            android:textColor="#fff"
+            android:text="@string/NoScan_1"
+            android:textColor="@color/normal_1"
             android:textStyle="bold"
             android:layout_marginTop="400dp"/>
 
@@ -33,7 +33,7 @@
             android:id="@+id/btnScanQR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Escanear"
+            android:text="@string/Scan"
             android:layout_centerInParent="true"/>
 
 

@@ -5,6 +5,11 @@
     //ShorCut
     <string name="cam">Escanear</string>
 
+    //Estandar
+    <string name="NoScan">No se ha escaneado ningún código</string>
+    <string name="NoScan_1">No se ha escaneado ningún enlace</string>
+    <string name="Scan">Escanear</string>
+
     //Menu
     <string name="qr">Códigos QR</string>
     <string name="barcode">Códigos de Barra</string>
