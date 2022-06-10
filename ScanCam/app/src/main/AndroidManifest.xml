@@ -31,12 +31,6 @@
 
 
         <activity
-            android:name="com.stuarddevapps.scancam.Politicas"
-            android:exported="true" />
-        <activity
-            android:name="com.stuarddevapps.scancam.Terminos"
-            android:exported="true" />
-        <activity
             android:name="com.stuarddevapps.scancam.MainActivity"
             android:exported="true">
 
