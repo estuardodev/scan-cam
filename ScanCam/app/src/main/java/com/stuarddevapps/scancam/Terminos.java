@@ -56,7 +56,7 @@ public class Terminos extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.item1:
+            case R.id.itb1:
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
                 return true;

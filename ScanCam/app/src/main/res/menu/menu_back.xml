@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/item1"
+        android:id="@+id/itb1"
         android:title="@string/mb"
         android:icon="@drawable/ic_backmenu24"
         app:showAsAction="ifRoom"/>
