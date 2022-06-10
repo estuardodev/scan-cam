@@ -22,7 +22,9 @@
     <string name="linkTerminos">https://stuarddevapps.web.app/terminos-y-condiciones.html</string>
     <string name="Escaneo_Complete">Completo</string>
     <string name="copy">Copiar</string>
-    <string name="NNN">NNN</string>
+    <string name="NNN"></string>
+    <string name="secure">El enlace parece ser Seguro</string>
+    <string name="nosecure">El enlace parece ser inseguro</string>
 
 
     //Menu
