@@ -4,6 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Escaneo">
+    tools:context=".Escaneo"
+    android:background="@color/other_2">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Escaneo_Complete"
+        android:textColor="@color/normal_1"
+        android:textSize="35dp"
+        android:textStyle="bold|italic"
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <TextView
+        android:id="@+id/link4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:text="@string/NoScan_1"
+        android:textColor="@color/normal_1"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="349dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
