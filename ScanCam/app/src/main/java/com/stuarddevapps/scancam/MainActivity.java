@@ -9,6 +9,11 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,10 +22,29 @@ public class MainActivity extends AppCompatActivity {
     private Fragment fragment;
     private FragmentManager manager;
 
+    //Anuncios
+    private AdView mAdView;
+    private AdView mAdView1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //ANUNCIOS
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        mAdView1 = findViewById(R.id.adView1);
+        AdRequest adRequest1 = new AdRequest.Builder().build();
+        mAdView1.loadAd(adRequest1);
 
 
         initView();
@@ -61,13 +85,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     private void openFragment(Fragment fragment){
         manager.beginTransaction().
                 replace(R.id.frameContainer, fragment)
                 .commit();
     }
-
     private void loadFirstFragment(){
         getSupportActionBar().setTitle(R.string.app_name);
         fragment = Codigosqr.newInstance();
