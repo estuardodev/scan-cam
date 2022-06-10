@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#161B22</color>
-    <color name="purple_500">#161B22</color>
-    <color name="purple_700">#161B22</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#161B22</color>
-    <color name="white">#FFFFFFFF</color>
 
-    //Menu Colores
-    <color name="c1">#161B22</color>
-    <color name="c2">#0D1117</color>
+    // Palette colors normal
+    <color name="normal_1">#FFF</color>
+    <color name="normal_2">#000</color>
+    <color name="normal_3">#9b9b9b</color>
+
+    // Palette Yellow
+    <color name="yellow_1">#ffff00</color>
+    <color name="yellow_2">#ffff56</color>
+    <color name="yellow_3">#ffff81</color>
+    <color name="yellow_4">#ff9800</color>
+    <color name="yellow_5">#ffc340</color>
+
+    // Palette Green water
+    <color name="green_1">#005227</color>
+    <color name="green_2">#038554</color>
+    <color name="green_3">#03bb85</color>
+    <color name="green_4">#68dbbd</color>
+    <color name="green_5">#a4fff7</color>
+
+    // Palette Black
+    <color name="grey_1">#000000</color>
+    <color name="grey_2">#272727</color>
+    <color name="grey_3">#454545</color>
+    <color name="grey_4">#666666</color>
+    <color name="grey_5">#8c8c8c</color>
+    <color name="grey_6">#D7D7D7</color>
+    <color name="grey_7">#C3C3C3</color>
+
+    //Other colors
+    <color name="other_1">#FFCBCB</color>
+    <color name="other_2">#161B22</color>
+    <color name="other_3">#0D1117</color>
 </resources>

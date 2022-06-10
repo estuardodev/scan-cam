@@ -1,12 +1,12 @@
 <resources>
     //SISTEMA
     <string name="app_name">Scan Cam</string>
+
     //ShorCut
     <string name="cam">Escanear</string>
 
-
     //Menu
-    <string name="qr">Scan Cam</string>
-    <string name="barcode">Escanear</string>
-    <string name="other">Scan Cam</string>
+    <string name="qr">Códigos QR</string>
+    <string name="barcode">Códigos de Barra</string>
+    <string name="other">Otros Códigos</string>
 </resources>
