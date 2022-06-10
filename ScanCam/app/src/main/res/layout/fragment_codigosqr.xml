@@ -11,7 +11,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Códigos QR"
+            android:text="@string/frag_qr"
             android:textColor="@color/normal_1"
             android:layout_centerHorizontal="true"
             android:textSize="35dp"
