@@ -22,7 +22,6 @@ import com.google.zxing.integration.android.IntentResult;
 public class Codigosotros extends Fragment {
 
     //Variables
-    TextView link;
     Button btnLeer;
 
     public Codigosotros() {
@@ -44,7 +43,6 @@ public class Codigosotros extends Fragment {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_codigosotros, container, false);
 
-        link = vista.findViewById(R.id.link3);
         btnLeer = vista.findViewById(R.id.btnScanOtros);
 
         btnScan();

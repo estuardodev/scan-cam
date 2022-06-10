@@ -21,7 +21,6 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class Codigosqr extends Fragment {
     //Variables
-    TextView link;
     Button btnLeer;
 
 
@@ -44,7 +43,6 @@ public class Codigosqr extends Fragment {
         // Inflate the layout for this fragment
         View vista = inflater.inflate(R.layout.fragment_codigosqr, container, false);
 
-        link = vista.findViewById(R.id.link);
         btnLeer = vista.findViewById(R.id.btnScanQR);
 
         btnScan();

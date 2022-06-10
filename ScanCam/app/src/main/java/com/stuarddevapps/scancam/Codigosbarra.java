@@ -21,7 +21,6 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class Codigosbarra extends Fragment {
     //Variables
-    TextView link;
     Button btnLeer;
 
     public Codigosbarra() {
@@ -42,7 +41,6 @@ public class Codigosbarra extends Fragment {
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_codigosbarra, container, false);
 
-        link = vista.findViewById(R.id.link2);
         btnLeer = vista.findViewById(R.id.btnScanBarras);
 
         btnScan();
