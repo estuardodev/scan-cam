@@ -21,7 +21,7 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class Codigosqr extends Fragment {
     //Variables
-    TextView link, link4;
+    TextView link;
     Button btnLeer;
 
 
@@ -45,7 +45,6 @@ public class Codigosqr extends Fragment {
         View vista = inflater.inflate(R.layout.fragment_codigosqr, container, false);
 
         link = vista.findViewById(R.id.link);
-        link4 = vista.findViewById(R.id.link4);
         btnLeer = vista.findViewById(R.id.btnScanQR);
 
         btnScan();
@@ -86,11 +85,6 @@ public class Codigosqr extends Fragment {
                 String envio = result.getContents().toString();
                 Intent ie = new Intent(getContext(), Escaneo.class);
                 ie.putExtra("Info",envio);
-                Toast.makeText(getContext(), getString(R.string.CopyScan), Toast.LENGTH_LONG).show();
-                ClipboardManager clipboard = (ClipboardManager)
-                        getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("simple text", link.getText());
-                clipboard.setPrimaryClip(clip);
                 startActivity(ie);
             }
         }else{
