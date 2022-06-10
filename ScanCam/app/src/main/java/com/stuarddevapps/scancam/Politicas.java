@@ -30,7 +30,7 @@ public class Politicas extends AppCompatActivity {
         miweb = findViewById(R.id.web2);
         miweb.getSettings().setJavaScriptEnabled(true);
         miweb.setWebViewClient(new WebViewClient());
-        miweb.loadUrl("https://stuarddevapps.web.app/politicas-de-privacidad.html");
+        miweb.loadUrl(getString(R.string.linkPoliticas));
 
         //ANUNCIOS
 

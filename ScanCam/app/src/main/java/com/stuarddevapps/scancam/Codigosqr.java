@@ -64,7 +64,7 @@ public class Codigosqr extends Fragment {
     public void escanear(){
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(Codigosqr.this);
         intent.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
-        intent.setPrompt("ESCANEAR CÓDIGO QR");
+        intent.setPrompt(getString(R.string.ScanQR));
         intent.setCameraId(0);
         intent.setBeepEnabled(true);
         intent.setOrientationLocked(false);
@@ -80,10 +80,10 @@ public class Codigosqr extends Fragment {
         {
             if (result.getContents() ==  null)
             {
-                Toast.makeText(getContext(), "Cancelaste el escaneo", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), getString(R.string.exitScan), Toast.LENGTH_LONG).show();
             }else{
                 link.setText(result.getContents().toString());
-                Toast.makeText(getContext(), "Texto copiado al portapapeles", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), getString(R.string.CopyScan), Toast.LENGTH_LONG).show();
                 ClipboardManager clipboard = (ClipboardManager)
                         getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("simple text", link.getText());

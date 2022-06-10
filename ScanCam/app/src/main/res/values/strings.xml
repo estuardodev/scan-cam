@@ -10,6 +10,17 @@
     <string name="NoScan_1">No se ha escaneado ningún enlace</string>
     <string name="Scan">Escanear</string>
     <string name="mb">Atras</string>
+    <string name="Terminos">Términos y Condiciones</string>
+    <string name="Politica">Pólitica de Privacidad</string>
+    <string name="compartir">Share</string>
+    <string name="ScanQR">ESCANEAR CÓDIGO QR</string>
+    <string name="ScanBarcode">ESCANEAR CÓDIGO DE BARRAS</string>
+    <string name="ScanOther">ESCANEAR OTRO TIPO DE CÓDIGO</string>
+    <string name="exitScan">Cancelaste el escaneo</string>
+    <string name="CopyScan">Texto copiado al portapapeles</string>
+    <string name="linkPoliticas">https://stuarddevapps.web.app/politicas-de-privacidad.html</string>
+    <string name="linkTerminos">https://stuarddevapps.web.app/terminos-y-condiciones.html</string>
+
 
     //Menu
     <string name="qr">Códigos QR</string>
