@@ -3,4 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Codigosqr"/>
+    tools:context=".Codigosqr"
+    android:background="@color/other_2">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Códigos QR"
+            android:textColor="#FFF"
+            android:layout_centerHorizontal="true"
+            android:textSize="35dp"
+            android:layout_marginTop="90dp"
+            android:textStyle="bold|italic"
+            />
+        <TextView
+            android:id="@+id/link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:autoLink="web"
+            android:text="No se ha escaneado ningún enlace"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_marginTop="400dp"/>
+
+        <Button
+            android:id="@+id/btnScanQR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Escanear"
+            android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+</FrameLayout>
