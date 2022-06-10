@@ -331,7 +331,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/arrow_back/baseline_arrow_back_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/check_circle/baseline_check_circle_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -341,8 +341,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="a0a0a0" />
-                            <entry key="outputName" value="ic_backmenu24" />
+                            <entry key="color" value="00ff66" />
+                            <entry key="outputName" value="ic_verify" />
                             <entry key="sourceFile" value="C:\Users\Estuardo\AndroidStudioProjects\ScanCam" />
                           </map>
                         </option>
