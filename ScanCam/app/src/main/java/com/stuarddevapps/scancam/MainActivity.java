@@ -119,8 +119,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("Text/plain");
                 intent.putExtra(Intent.EXTRA_SUBJECT,getResources().getString(R.string.app_name));
-                String aux = "Hey,descarga esta increíble aplicación.\n¡Descargala y dale 5 estrellas!\n";
-                aux = aux +"https://play.google.com/store/apps/details?id=com.er.scan";
+                String aux = getString(R.string.msg);
+                aux = aux +getString(R.string.appurl);
                 intent.putExtra(intent.EXTRA_TEXT, aux);
                 startActivity(intent);
                 return true;
