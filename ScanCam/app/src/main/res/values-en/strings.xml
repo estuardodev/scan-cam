@@ -4,40 +4,40 @@
     <string name="app_name">Scan Cam</string>
 
     //ShorCut
-    <string name="cam">Escanear</string>
+    <string name="cam">Scan</string>
 
     //Estandar
-    <string name="NoScan">No se ha escaneado ningún código</string>
-    <string name="NoScan_1">No se ha escaneado ningún enlace</string>
-    <string name="Scan">Escanear</string>
-    <string name="mb">Atras</string>
-    <string name="Terminos">Términos y Condiciones</string>
-    <string name="Politica">Pólitica de Privacidad</string>
+    <string name="NoScan">No code scanned</string>
+    <string name="NoScan_1">No link scanned</string>
+    <string name="Scan">Scan</string>
+    <string name="mb">Back</string>
+    <string name="Terminos">Terms and Conditions</string>
+    <string name="Politica">Privacy Policy</string>
     <string name="compartir">Share</string>
-    <string name="ScanQR">ESCANEAR CÓDIGO QR</string>
-    <string name="ScanBarcode">ESCANEAR CÓDIGO DE BARRAS</string>
-    <string name="ScanOther">ESCANEAR OTRO TIPO DE CÓDIGO</string>
-    <string name="exitScan">Cancelaste el escaneo</string>
-    <string name="CopyScan">Texto copiado al portapapeles</string>
+    <string name="ScanQR">SCAN QR CODE</string>
+    <string name="ScanBarcode">SCAN BARCODE</string>
+    <string name="ScanOther">SCAN ANOTHER TYPE OF CODE</string>
+    <string name="exitScan">You canceled the scan</string>
+    <string name="CopyScan">Text copied to clipboard</string>
     <string name="linkPoliticas">https://stuarddevapps.web.app/politicas-de-privacidad.html</string>
     <string name="linkTerminos">https://stuarddevapps.web.app/terminos-y-condiciones.html</string>
-    <string name="Escaneo_Complete">Completo</string>
-    <string name="copy">Copiar</string>
+    <string name="Escaneo_Complete">Complete</string>
+    <string name="copy">Copy</string>
     <string name="NNN"></string>
-    <string name="secure">El enlace parece ser Seguro</string>
-    <string name="nosecure">El enlace parece ser inseguro</string>
-    <string name="frag_qr">Códigos QR</string>
-    <string name="frag_bar">Código de Barra</string>
-    <string name="frag_o">Otros Códigos</string>
-    <string name="info">¿Qué significa esto?</string>
-    <string name="terminos"><a href="https://stuarddevapps.web.app/terminos-y-condiciones.html">Términos y Condiciones de Scan Cam</a></string>
-    <string name="mala">En caso contrario y el icono mostrado sea este probablemente el sitio web sea inseguro de varias manera como por ejemplo, virus, malware, datos del usuario expuestos, cookies mal intencionadas, etc.</string>
-    <string name="sc">Scan Cam, no se hace responsable de los enlaces que usted como usuario visita. Todo enlace que abra fuera de la app es bajo su responsabilidad. Puedes leer mas en: </string>
-    <string name="bien">En dado caso que el icono sea este, se refiere a que posiblemente el sitio sea seguro. Mas no se confirma, debido que puede estar enlazado a un acortador de enlaces como bien lo puede ser bitly</string>
-    <string name="que">¿Qué significa esto?</string>
+    <string name="secure">The link appears to be Secure</string>
+    <string name="nosecure">Link appears to be insecure</string>
+    <string name="frag_qr">QR Codes</string>
+    <string name="frag_bar">Barcode</string>
+    <string name="frag_o">Other Codes</string>
+    <string name="info">What does this mean?</string>
+    <string name="terminos"><a href="https://stuarddevapps.web.app/terminos-y-condiciones.html">Scan Cam Terms and Conditions</a></string>
+    <string name="mala">Otherwise and the icon displayed is this, the website is probably insecure in various ways such as viruses, malware, exposed user data, malicious cookies, etc.</string>
+    <string name="sc">Scan Cam, is not responsible for the links that you as a user visit. Any link you open outside the app is at your own risk. You can read more at: </string>
+    <string name="bien">In case the icon is this, it refers to the fact that the site is possibly secure. But it is not confirmed, because it can be linked to a link shortener as well as bitly can be</string>
+    <string name="que">What does this mean?</string>
 
     //Share
-    <string name="msg">Hey,descarga esta increíble aplicación.\n¡Descargala y dale 5 estrellas!\n</string>
+    <string name="msg">Hey,download this amazing app.\nDownload it and give it 5 stars!\n</string>
     <string name="appurl">https://play.google.com/store/apps/details?id=com.stuarddevapps.scancam</string>
 
     //ADS
@@ -47,7 +47,7 @@
 
 
     //Menu
-    <string name="qr">Códigos QR</string>
-    <string name="barcode">Códigos de Barra</string>
-    <string name="other">Otros Códigos</string>
+    <string name="qr">QR Codes</string>
+    <string name="barcode">Barcodes</string>
+    <string name="other">Other Codes</string>
 </resources>
