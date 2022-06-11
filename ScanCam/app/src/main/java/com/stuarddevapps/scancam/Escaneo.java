@@ -134,6 +134,11 @@ public class Escaneo extends AppCompatActivity {
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
                 return true;
+            case R.id.infos:
+                Intent is = new Intent(this, Informacion.class);
+                startActivity(is);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
