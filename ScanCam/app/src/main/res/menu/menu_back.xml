@@ -6,4 +6,10 @@
         android:title="@string/mb"
         android:icon="@drawable/ic_backmenu24"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/infos"
+        android:icon="@drawable/ic_info2"
+        android:iconTint="@color/normal_2"
+        app:showAsAction="never"
+        android:title="@string/info"/>
 </menu>
