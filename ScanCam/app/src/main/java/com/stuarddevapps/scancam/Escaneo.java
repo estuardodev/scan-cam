@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -45,6 +46,7 @@ public class Escaneo extends AppCompatActivity {
         btn = findViewById(R.id.btncopy);
         img = findViewById(R.id.imageView);
         rl = findViewById(R.id.mys);
+
 
         copy();
         banner();
