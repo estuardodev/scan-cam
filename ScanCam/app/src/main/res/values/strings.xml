@@ -33,6 +33,7 @@
     <string name="mala">En caso contrario y el icono mostrado sea este probablemente el sitio web sea inseguro de varias manera como por ejemplo, virus, malware, datos del usuario expuestos, cookies mal intencionadas, etc.</string>
     <string name="sc">Scan Cam, no se hace responsable de los enlaces que usted como usuario visita. Todo enlace que abra fuera de la app es bajo su responsabilidad. Puedes leer mas en: </string>
     <string name="bien">En dado caso que el icono sea este, se refiere a que posiblemente el sitio sea seguro. Mas no se confirma, debido que puede estar enlazado a un acortador de enlaces como bien lo puede ser bitly</string>
+    <string name="que">¿Qué significa esto?</string>
 
     //Share
     <string name="msg">Hey,descarga esta increíble aplicación.\n¡Descargala y dale 5 estrellas!\n</string>
