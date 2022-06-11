@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Codigosqr"
-    android:background="@color/other_2">
+    android:background="@color/other_7">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
