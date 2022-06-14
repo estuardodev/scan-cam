@@ -139,6 +139,8 @@ public class Codigosqr extends Fragment {
         } else {
             super.onActivityResult(requestCode, resultCode, data);
 
+            
+
         }
     }
 
