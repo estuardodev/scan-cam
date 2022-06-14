@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private Fragment fragment;
     private FragmentManager manager;
 
+
+
     //Anuncios
     private AdView mAdView;
     private AdView mAdView1;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         mAdView1 = findViewById(R.id.adView1);
         AdRequest adRequest1 = new AdRequest.Builder().build();
         mAdView1.loadAd(adRequest1);
+
 
 
         initView();
