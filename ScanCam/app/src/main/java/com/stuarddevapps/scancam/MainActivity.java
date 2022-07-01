@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     //Anuncios
-    private AdView mAdView;
     private AdView mAdView1;
 
     @Override
