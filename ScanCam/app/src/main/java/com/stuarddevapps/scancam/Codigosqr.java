@@ -98,7 +98,7 @@ public class Codigosqr extends Fragment {
 
     public void escanear() {
         IntentIntegrator intent = IntentIntegrator.forSupportFragment(Codigosqr.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
         intent.setPrompt(getString(R.string.ScanQR));
         intent.setCameraId(0);
         intent.setBeepEnabled(true);

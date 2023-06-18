@@ -9,8 +9,8 @@ android {
         applicationId "com.stuarddevapps.scancam"
         minSdk 19
         targetSdk 31
-        versionCode 10
-        versionName "5.2"
+        versionCode 11
+        versionName "5.3"
 
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

@@ -16,21 +16,20 @@
     <string name="compartir">Share</string>
     <string name="ScanQR">SCAN QR CODE</string>
     <string name="ScanBarcode">SCAN BARCODE</string>
-    <string name="ScanOther">SCAN ANOTHER TYPE OF CODE</string>
     <string name="exitScan">You canceled the scan</string>
     <string name="CopyScan">Text copied to clipboard</string>
-    <string name="linkPoliticas">https://stuarddevapps.web.app/politicas-de-privacidad.html</string>
-    <string name="linkTerminos">https://stuarddevapps.web.app/terminos-y-condiciones.html</string>
-    <string name="Escaneo_Complete">Complete</string>
+    <string name="linkPoliticas">https://estuardo.dev/legal/politicas-de-privacidad/</string>
+    <string name="linkTerminos">https://estuardo.dev/legal/terminos-y-condiciones/</string>
+    <string name="Escaneo_Complete">Scan Complete</string>
     <string name="copy">Copy</string>
     <string name="NNN"></string>
     <string name="secure">The link appears to be Secure</string>
     <string name="nosecure">Link appears to be insecure</string>
-    <string name="frag_qr">QR Codes</string>
+    <string name="frag_qr">Scan Codes</string>
     <string name="frag_bar">Barcode</string>
     <string name="frag_o">Other Codes</string>
     <string name="info">What does this mean?</string>
-    <string name="terminos"><a href="https://stuarddevapps.web.app/terminos-y-condiciones.html">Scan Cam Terms and Conditions</a></string>
+    <string name="terminos"><a href="https://estuardo.dev/legal/terminos-y-condiciones/">Scan Cam Terms and Conditions</a></string>
     <string name="mala">Otherwise and the icon displayed is this, the website is probably insecure in various ways such as viruses, malware, exposed user data, malicious cookies, etc.</string>
     <string name="sc">Scan Cam, is not responsible for the links that you as a user visit. Any link you open outside the app is at your own risk. You can read more at: </string>
     <string name="bien">In case the icon is this, it refers to the fact that the site is possibly secure. But it is not confirmed, because it can be linked to a link shortener as well as bitly can be</string>
@@ -47,7 +46,6 @@
 
 
     //Menu
-    <string name="qr">QR Codes</string>
+    <string name="qr">Scan Code</string>
     <string name="barcode">Barcodes</string>
-    <string name="other">Other Codes</string>
 </resources>

@@ -77,11 +77,6 @@ public class MainActivity extends AppCompatActivity {
                         fragment = Codigosbarra.newInstance();
                         openFragment(fragment);
                         return true;
-                    case R.id.menu_other:
-                        getSupportActionBar().setTitle(R.string.other);
-                        fragment = Codigosotros.newInstance();
-                        openFragment(fragment);
-                        return true;
                 }
                 return false;
             }

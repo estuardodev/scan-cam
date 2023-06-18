@@ -8,8 +8,4 @@
         android:id="@+id/menu_bar"
         android:title="@string/barcode"
         android:icon="@drawable/ic_barras"/>
-    <item
-        android:id="@+id/menu_other"
-        android:title="@string/other"
-        android:icon="@drawable/ic_otros"/>
 </menu>

@@ -44,7 +44,6 @@ public class Escaneo extends AppCompatActivity {
         enlace = findViewById(R.id.link4);
         secure = findViewById(R.id.txtSecure);
         btn = findViewById(R.id.btncopy);
-        img = findViewById(R.id.imageView);
         rl = findViewById(R.id.mys);
 
 
@@ -62,23 +61,7 @@ public class Escaneo extends AppCompatActivity {
         String datoenlace = bundle.getString("Info").toString();
         enlace.setText(datoenlace);
         URL url = new URL(datoenlace);
-        verify(url);
         clip();
-    }
-
-    private void verify(URL url){
-        if ("https".equals(url.getProtocol())) {
-            secure.setText(getString(R.string.secure));
-            img.setVisibility(View.VISIBLE);
-            img.setImageResource(R.drawable.ic_verify);
-            rl.setBackgroundResource(R.color.green_1);
-
-        } else if ("http".equals(url.getProtocol())) {
-            secure.setText(getString(R.string.nosecure));
-            img.setVisibility(View.VISIBLE);
-            img.setImageResource(R.drawable.ic_negative);
-            rl.setBackgroundResource(R.color.other_6);
-        }
     }
 
 
@@ -135,10 +118,6 @@ public class Escaneo extends AppCompatActivity {
             case R.id.itb1:
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
-                return true;
-            case R.id.infos:
-                Intent is = new Intent(this, Informacion.class);
-                startActivity(is);
                 return true;
 
             default:

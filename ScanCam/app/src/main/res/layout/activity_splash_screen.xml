@@ -21,15 +21,16 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="50dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="StuarddevApps"
-        android:textColor="#0095ff"
-        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:text="estuardodev"
+        android:textColor="#0095ff"
+        android:textStyle="bold" />
 
 
 
