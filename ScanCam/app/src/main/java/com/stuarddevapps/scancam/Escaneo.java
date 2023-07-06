@@ -23,9 +23,13 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -36,6 +40,7 @@ public class Escaneo extends AppCompatActivity {
     ImageView img;
     RelativeLayout rl;
     private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +51,7 @@ public class Escaneo extends AppCompatActivity {
         btn = findViewById(R.id.btncopy);
         rl = findViewById(R.id.mys);
 
-
+        setAds();
         copy();
         banner();
         try {
@@ -61,17 +66,9 @@ public class Escaneo extends AppCompatActivity {
         String datoenlace = bundle.getString("Info").toString();
         enlace.setText(datoenlace);
         URL url = new URL(datoenlace);
-        clip();
     }
 
 
-    private void clip(){
-        Toast.makeText(Escaneo.this, getString(R.string.CopyScan), Toast.LENGTH_LONG).show();
-        ClipboardManager clipboard = (ClipboardManager)
-                getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData clip = ClipData.newPlainText("simple text", enlace.getText());
-        clipboard.setPrimaryClip(clip);
-    }
 
     private void copy(){
         btn.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +79,19 @@ public class Escaneo extends AppCompatActivity {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("simple text",  text);
                 clipboard.setPrimaryClip(clip);
+
+                if(mInterstitialAd!=null){
+                    mInterstitialAd.show(Escaneo.this);
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            super.onAdDismissedFullScreenContent();
+                            mInterstitialAd = null;
+                        }
+
+                    });
+
+                }
 
             }
         });
@@ -103,6 +113,26 @@ public class Escaneo extends AppCompatActivity {
         mAdView.loadAd(adRequest);
     }
 
+
+    private void setAds(){
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,getString(R.string.intersictial_scan), adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        mInterstitialAd = null;
+                    }
+                });
+    }
 
 
     @Override

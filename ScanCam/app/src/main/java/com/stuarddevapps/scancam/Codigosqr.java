@@ -61,8 +61,8 @@ public class Codigosqr extends Fragment {
         });
 
         btnLeer = vista.findViewById(R.id.btnScanQR);
-        setAds();
         btnScan();
+        setAds();
         return vista;
     }
 
@@ -91,7 +91,20 @@ public class Codigosqr extends Fragment {
         btnLeer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 escanear();
+                if(mInterstitialAd!=null){
+                    mInterstitialAd.show(getActivity());
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            super.onAdDismissedFullScreenContent();
+                            mInterstitialAd = null;
+                        }
+
+                    });
+
+                }
             }
         });
     }
@@ -120,19 +133,6 @@ public class Codigosqr extends Fragment {
                 Intent ie = new Intent(getContext(), Escaneo.class);
                 ie.putExtra("Info", envio);
                 startActivity(ie);
-
-                if(mInterstitialAd!=null){
-                    mInterstitialAd.show(getActivity());
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-                            super.onAdDismissedFullScreenContent();
-                            mInterstitialAd = null;
-                        }
-
-                    });
-
-                }
 
 
             }

@@ -88,6 +88,18 @@ public class Codigosbarra extends Fragment {
             @Override
             public void onClick(View view) {
                escanear();
+                if(mInterstitialAd!=null){
+                    mInterstitialAd.show(getActivity());
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            super.onAdDismissedFullScreenContent();
+                            mInterstitialAd = null;
+                        }
+
+                    });
+
+                }
             }
         });
     }
@@ -116,18 +128,7 @@ public class Codigosbarra extends Fragment {
                 Intent ie = new Intent(getContext(), Escaneo.class);
                 ie.putExtra("Info",envio);
                 startActivity(ie);
-                if(mInterstitialAd!=null){
-                    mInterstitialAd.show(getActivity());
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-                            super.onAdDismissedFullScreenContent();
-                            mInterstitialAd = null;
-                        }
 
-                    });
-
-                }
             }
         }else{
             super.onActivityResult(requestCode, resultCode, data);
