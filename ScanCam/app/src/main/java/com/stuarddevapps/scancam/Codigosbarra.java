@@ -1,5 +1,9 @@
 package com.stuarddevapps.scancam;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -17,6 +21,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
@@ -55,6 +60,54 @@ public class Codigosbarra extends Fragment {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {}
         });
+
+        // Suponiendo que estás dentro de un Fragment o Activity
+        LottieAnimationView animationView = vista.findViewById(R.id.animation_view1);
+
+        // Duración de la animación en milisegundos
+        int durationForward = 5000;
+        int durationBackward = 1000;
+
+        // Obtén la anchura de la pantalla
+        int screenWidth = getResources().getDisplayMetrics().widthPixels;
+
+        // Crea la animación de traslación de izquierda a derecha
+        ObjectAnimator forwardAnimator = ObjectAnimator.ofFloat(
+                animationView,
+                "translationX",
+                -screenWidth,
+                screenWidth
+        );
+
+        // Establece la duración de la animación
+        forwardAnimator.setDuration(durationForward);
+
+        // Crea la animación de rotación de 180 grados en modo espejo
+        ObjectAnimator backwardAnimator = ObjectAnimator.ofFloat(
+                animationView,
+                "rotationY",
+                180
+        );
+
+        // Establece la duración de la animación
+        backwardAnimator.setDuration(durationBackward);
+
+        // Configura el AnimatorSet para ejecutar ambas animaciones
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playSequentially(forwardAnimator, backwardAnimator);
+
+        // Agrega un listener para reiniciar la animación cuando termine
+        animatorSet.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                // Reinicia la animación después de que termine la secuencia
+                animatorSet.start();
+            }
+        });
+
+        // Inicia la animación
+        animatorSet.start();
+
 
         btnLeer = vista.findViewById(R.id.btnScanBarras);
         btnScan();

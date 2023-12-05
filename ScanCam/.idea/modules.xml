@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Scan_Cam.iml" filepath="$PROJECT_DIR$/.idea/modules/Scan_Cam.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Scan_Cam.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Scan_Cam.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Scan_Cam.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Scan_Cam.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Scan_Cam.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Scan_Cam.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Scan_Cam.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Scan_Cam.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Scan Cam.Scan_Cam.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Scan Cam.Scan_Cam.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Scan Cam.Scan_Cam.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Scan Cam.Scan_Cam.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Scan Cam.Scan_Cam.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Scan Cam.Scan_Cam.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Scan Cam.Scan_Cam.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Scan Cam.Scan_Cam.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ScanCam.Scan_Cam.iml" filepath="$PROJECT_DIR$/.idea/modules/ScanCam.Scan_Cam.iml" />
     </modules>
   </component>
 </project>

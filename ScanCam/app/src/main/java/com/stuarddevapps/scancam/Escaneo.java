@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,6 +32,10 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -51,6 +56,33 @@ public class Escaneo extends AppCompatActivity {
         btn = findViewById(R.id.btncopy);
         rl = findViewById(R.id.mys);
 
+
+        FileOutputStream fileOutputStream = null;
+
+        try {
+            String textoASalvar = dato() + "\n";
+
+            // Abre el archivo en modo MODE_APPEND para añadir contenido al final
+            fileOutputStream = openFileOutput("pruebas.txt", MODE_APPEND);
+
+            // Escribe la nueva línea en el archivo
+            fileOutputStream.write(textoASalvar.getBytes());
+
+            Log.d("TAG1", "Fichero salvado:" + getFilesDir() + "/" + "pruebas.txt");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (fileOutputStream != null) {
+                try {
+                    fileOutputStream.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
         setAds();
         copy();
         banner();
@@ -68,6 +100,11 @@ public class Escaneo extends AppCompatActivity {
         URL url = new URL(datoenlace);
     }
 
+    private String dato() throws MalformedURLException{
+        Bundle bundle = getIntent().getExtras();
+        String datoenlace = bundle.getString("Info").toString();
+        return  datoenlace;
+    }
 
 
     private void copy(){

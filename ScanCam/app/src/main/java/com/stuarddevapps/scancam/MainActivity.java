@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest1 = new AdRequest.Builder().build();
         mAdView1.loadAd(adRequest1);
 
-
-
         initView();
         initValues();
         initListener();
@@ -76,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
                         getSupportActionBar().setTitle(R.string.barcode);
                         fragment = Codigosbarra.newInstance();
                         openFragment(fragment);
+                        return true;
+                    case R.id.menu_scans:
+                        Intent iea= new Intent(MainActivity.this, ScansLog.class);
+                        startActivity(iea);
                         return true;
                 }
                 return false;

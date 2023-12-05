@@ -42,9 +42,12 @@
     <string name="intersictial_qr">ca-app-pub-6691938542138083/3493162843</string>
     <string name="intersictial_bar">ca-app-pub-6691938542138083/8458549062</string>
     <string name="intersictial_scan">ca-app-pub-6691938542138083/8216073078</string>
+    <string name="intersictial_logs">ca-app-pub-6691938542138083/4303013994</string>
 
 
     //Menu
     <string name="qr">Escanea Códigos</string>
     <string name="barcode">Códigos de Barra</string>
+    <string name="history">Historial</string>
+
 </resources>

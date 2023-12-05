@@ -1,5 +1,6 @@
 package com.stuarddevapps.scancam;
 
+import android.animation.ObjectAnimator;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -30,6 +33,12 @@ import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 public class Codigosqr extends Fragment {
     //Variables
@@ -59,6 +68,8 @@ public class Codigosqr extends Fragment {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {}
         });
+
+
 
         btnLeer = vista.findViewById(R.id.btnScanQR);
         btnScan();
@@ -132,9 +143,8 @@ public class Codigosqr extends Fragment {
                 String envio = result.getContents().toString();
                 Intent ie = new Intent(getContext(), Escaneo.class);
                 ie.putExtra("Info", envio);
+
                 startActivity(ie);
-
-
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
