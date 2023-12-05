@@ -7,9 +7,9 @@ android {
 
     defaultConfig {
         applicationId "com.stuarddevapps.scancam"
-        minSdk 19
-        targetSdk 31
-        versionCode 17
+        minSdk 22
+        targetSdk 33
+        versionCode 18
         versionName "5.8"
 
         multiDexEnabled true
