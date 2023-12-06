@@ -42,10 +42,7 @@ import java.net.URL;
 public class Escaneo extends AppCompatActivity {
     TextView enlace, secure;
     Button btn;
-    ImageView img;
     RelativeLayout rl;
-    private AdView mAdView;
-    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,121 +53,28 @@ public class Escaneo extends AppCompatActivity {
         btn = findViewById(R.id.btncopy);
         rl = findViewById(R.id.mys);
 
+        String TextoObtenido = Utilidades.ObtenerDatoIntent(Escaneo.this, "Info");
+        enlace.setText(TextoObtenido);
 
-        FileOutputStream fileOutputStream = null;
+        Archivos archivos = new Archivos();
+        archivos.Escribir(Escaneo.this ,TextoObtenido, "pruebas.txt");
 
-        try {
-            String textoASalvar = dato() + "\n";
+        AdsClass.loadAd(Escaneo.this);
+        AdsClass.interstitialAd(getString(R.string.intersictial_scan), Escaneo.this);
+        AdsClass.bannerAd(findViewById(R.id.adView));
 
-            // Abre el archivo en modo MODE_APPEND para añadir contenido al final
-            fileOutputStream = openFileOutput("pruebas.txt", MODE_APPEND);
-
-            // Escribe la nueva línea en el archivo
-            fileOutputStream.write(textoASalvar.getBytes());
-
-            Log.d("TAG1", "Fichero salvado:" + getFilesDir() + "/" + "pruebas.txt");
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (fileOutputStream != null) {
-                try {
-                    fileOutputStream.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-
-        setAds();
         copy();
-        banner();
-        try {
-            extraccion();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
     }
-
-    public void extraccion() throws MalformedURLException {
-        Bundle bundle = getIntent().getExtras();
-        String datoenlace = bundle.getString("Info").toString();
-        enlace.setText(datoenlace);
-        URL url = new URL(datoenlace);
-    }
-
-    private String dato() throws MalformedURLException{
-        Bundle bundle = getIntent().getExtras();
-        String datoenlace = bundle.getString("Info").toString();
-        return  datoenlace;
-    }
-
 
     private void copy(){
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String text = enlace.getText().toString();
-                Toast.makeText(Escaneo.this, getString(R.string.CopyScan), Toast.LENGTH_LONG).show();
-                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("simple text",  text);
-                clipboard.setPrimaryClip(clip);
-
-                if(mInterstitialAd!=null){
-                    mInterstitialAd.show(Escaneo.this);
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-                            super.onAdDismissedFullScreenContent();
-                            mInterstitialAd = null;
-                        }
-
-                    });
-
-                }
-
+                AdsClass.Mostrar(Escaneo.this);
+                Utilidades.CopiarPortapapeles(Escaneo.this, Utilidades.ObtenerDatoIntent(Escaneo.this, "Info"));
             }
         });
-
     }
-
-
-    public void banner(){
-        //ANUNCIOS
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-    }
-
-
-    private void setAds(){
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(this,getString(R.string.intersictial_scan), adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        mInterstitialAd = null;
-                    }
-                });
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -186,7 +90,6 @@ public class Escaneo extends AppCompatActivity {
                 Intent i = new Intent(this, MainActivity.class);
                 startActivity(i);
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }

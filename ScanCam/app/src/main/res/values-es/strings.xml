@@ -50,4 +50,5 @@
     <string name="qr">Escanea Códigos</string>
     <string name="barcode">Códigos de Barra</string>
     <string name="history">Historial</string>
+    <string name="clear">Vaciar</string>
 </resources>

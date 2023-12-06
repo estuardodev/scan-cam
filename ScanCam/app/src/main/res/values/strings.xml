@@ -50,4 +50,7 @@
     <string name="barcode">Códigos de Barra</string>
     <string name="history">Historial</string>
 
+    // Menu History
+    <string name="clear">Vaciar</string>
+
 </resources>

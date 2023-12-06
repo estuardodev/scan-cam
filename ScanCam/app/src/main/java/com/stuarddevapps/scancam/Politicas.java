@@ -21,29 +21,18 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 public class Politicas extends AppCompatActivity {
     private WebView miweb;
 
-    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_politicas);
 
+        AdsClass.loadAd(Politicas.this);
+        AdsClass.bannerAd(findViewById(R.id.adView));
+
         miweb = findViewById(R.id.web2);
         miweb.getSettings().setJavaScriptEnabled(true);
         miweb.setWebViewClient(new WebViewClient());
         miweb.loadUrl(getString(R.string.linkPoliticas));
-
-        //ANUNCIOS
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
     }
 
 

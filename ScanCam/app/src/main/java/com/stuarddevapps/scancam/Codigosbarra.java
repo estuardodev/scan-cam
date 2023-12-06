@@ -56,11 +56,60 @@ public class Codigosbarra extends Fragment {
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_codigosbarra, container, false);
 
-        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
+        // Anuncios
+        AdsClass.loadAd(getContext());
+        AdsClass.interstitialAd(getString(R.string.intersictial_bar), getContext());
 
+        Animacion(vista);
+
+        btnLeer = vista.findViewById(R.id.btnScanBarras);
+        btnScan();
+
+        return vista;
+    }
+
+    private void btnScan(){
+        btnLeer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               escanear();
+                AdsClass.Mostrar(getContext());
+            }
+        });
+    }
+
+    public void escanear(){
+        IntentIntegrator intent = IntentIntegrator.forSupportFragment(Codigosbarra.this);
+        intent.setDesiredBarcodeFormats(IntentIntegrator.PRODUCT_CODE_TYPES);
+        intent.setPrompt(getString(R.string.ScanBarcode));
+        intent.setCameraId(0);
+        intent.setBeepEnabled(true);
+        intent.setOrientationLocked(false);
+        intent.setBarcodeImageEnabled(false);
+        intent.initiateScan();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode, data);
+        if (result != null)
+        {
+            if (result.getContents() ==  null)
+            {
+                Toast.makeText(getContext(), getString(R.string.exitScan), Toast.LENGTH_LONG).show();
+            }else{
+                String envio = result.getContents().toString();
+                Intent ie = new Intent(getContext(), Escaneo.class);
+                ie.putExtra("Info",envio);
+                startActivity(ie);
+
+            }
+        }else{
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    private void Animacion(View vista){
         // Suponiendo que estás dentro de un Fragment o Activity
         LottieAnimationView animationView = vista.findViewById(R.id.animation_view1);
 
@@ -108,84 +157,6 @@ public class Codigosbarra extends Fragment {
         // Inicia la animación
         animatorSet.start();
 
-
-        btnLeer = vista.findViewById(R.id.btnScanBarras);
-        btnScan();
-        setAds();
-
-        return vista;
-    }
-
-    private void setAds(){
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(getContext(),getString(R.string.intersictial_bar), adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        mInterstitialAd = null;
-                    }
-                });
-    }
-
-    private void btnScan(){
-        btnLeer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               escanear();
-                if(mInterstitialAd!=null){
-                    mInterstitialAd.show(getActivity());
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-                            super.onAdDismissedFullScreenContent();
-                            mInterstitialAd = null;
-                        }
-
-                    });
-
-                }
-            }
-        });
-    }
-
-    public void escanear(){
-        IntentIntegrator intent = IntentIntegrator.forSupportFragment(Codigosbarra.this);
-        intent.setDesiredBarcodeFormats(IntentIntegrator.PRODUCT_CODE_TYPES);
-        intent.setPrompt(getString(R.string.ScanBarcode));
-        intent.setCameraId(0);
-        intent.setBeepEnabled(true);
-        intent.setOrientationLocked(false);
-        intent.setBarcodeImageEnabled(false);
-        intent.initiateScan();
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode, data);
-        if (result != null)
-        {
-            if (result.getContents() ==  null)
-            {
-                Toast.makeText(getContext(), getString(R.string.exitScan), Toast.LENGTH_LONG).show();
-            }else{
-                String envio = result.getContents().toString();
-                Intent ie = new Intent(getContext(), Escaneo.class);
-                ie.putExtra("Info",envio);
-                startActivity(ie);
-
-            }
-        }else{
-            super.onActivityResult(requestCode, resultCode, data);
-        }
     }
 
 }

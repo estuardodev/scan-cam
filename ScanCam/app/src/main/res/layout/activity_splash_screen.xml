@@ -7,6 +7,15 @@
     tools:context=".SplashScreen"
     android:background="#161B22">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version 123"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:id="@+id/VersionName"
+        android:textColor="@color/normal_1"/>
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"

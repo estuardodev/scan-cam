@@ -43,8 +43,6 @@ import java.io.FileWriter;
 public class Codigosqr extends Fragment {
     //Variables
     Button btnLeer;
-    private InterstitialAd mInterstitialAd;
-
 
     public Codigosqr() {
         // Required empty public constructor
@@ -64,39 +62,13 @@ public class Codigosqr extends Fragment {
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_codigosqr, container, false);
 
-        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {}
-        });
-
-
+        AdsClass.loadAd(getContext());
+        AdsClass.interstitialAd(getString(R.string.intersictial_qr), getContext());
 
         btnLeer = vista.findViewById(R.id.btnScanQR);
         btnScan();
-        setAds();
         return vista;
     }
-
-    private void setAds(){
-        AdRequest adRequest = new AdRequest.Builder().build();
-
-        InterstitialAd.load(getContext(),getString(R.string.intersictial_qr), adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-                    }
-
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        mInterstitialAd = null;
-                    }
-                });
-    }
-
 
     private void btnScan() {
         btnLeer.setOnClickListener(new View.OnClickListener() {
@@ -104,18 +76,7 @@ public class Codigosqr extends Fragment {
             public void onClick(View view) {
 
                 escanear();
-                if(mInterstitialAd!=null){
-                    mInterstitialAd.show(getActivity());
-                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
-                        @Override
-                        public void onAdDismissedFullScreenContent() {
-                            super.onAdDismissedFullScreenContent();
-                            mInterstitialAd = null;
-                        }
-
-                    });
-
-                }
+                AdsClass.Mostrar(getContext());
             }
         });
     }

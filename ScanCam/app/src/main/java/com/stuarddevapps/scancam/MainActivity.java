@@ -25,27 +25,14 @@ public class MainActivity extends AppCompatActivity {
     private Fragment fragment;
     private FragmentManager manager;
 
-
-
-    //Anuncios
-    private AdView mAdView1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         //ANUNCIOS
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        mAdView1 = findViewById(R.id.adView1);
-        AdRequest adRequest1 = new AdRequest.Builder().build();
-        mAdView1.loadAd(adRequest1);
+        AdsClass.loadAd(this);
+        AdsClass.bannerAd(findViewById(R.id.adView1));
 
         initView();
         initValues();

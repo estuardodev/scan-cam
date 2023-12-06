@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/iMenu2"
+        android:title="@string/clear"
+        android:icon="@drawable/ic_clear"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/iMenu1"
+        android:title="@string/mb"
+        android:icon="@drawable/ic_backmenu24"
+        app:showAsAction="ifRoom"/>
+</menu>
